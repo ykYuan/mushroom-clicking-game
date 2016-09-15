@@ -1,0 +1,139 @@
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+CIS 120 Game Project Proposal
+PennKey: ___45663682____
+Name of TA you consulted with: _____zane stiles_____
+=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+
+===============
+=: Your Game :=
+===============
+
+- What game are you planning to implement? If it is a game of your own design,
+  or not especially well-known, provide a 2-3 sentence description of the game.
+  
+  
+  My idea for the game is that there will be many shapes showing up in the screen, and clicking on
+  them will make them disappear and you will get points for it. However, the shapes will disappear
+  after a while so you got to click fast, and some shapes might require more than one clicks to 
+  get the points.
+  
+
+
+- What classes and interfaces do you plan to create? How will the different
+  components of your game (the model, the GUI, etc.) interact?
+  
+  First of all, I need to make all the different shapes (circle, triangle, square, star). I also
+  need a main method to run the game, which is provided already in the sample code given to us. 
+  Lastly, I need to a gamecourt class where I will assemble all the pieces together.
+  
+  Interfaces and classes that I will implement include: jpanel, jframe, jcomponent, runnable, 
+  gameobject, reader, and writer. First I will have the outer jframe, then I will add all the 
+  jpanels inside with the game state shown on the top of the frame, the highest score shown 
+  on the bottom of the frame, and the gamecourt in the middle of the frame. Within the gamecourt,
+  I will have various shapes spawn at set intervals and create actionlisteners corresponding to
+  all those shapes which will update the current score if all the shape is clicked. A timer is 
+  needed such that the shapes will disappear over time. If a black coloreded object is clicekd,
+  then the player loses ponts. To keep track of the highest score, I also
+  need to create a txt file and whenever a game is played the score will be written down on the 
+  text file and before the next game, the highest score will be updated based on the highest 
+  number in the txt file.
+
+
+- What do you think will be the most challenging thing to implement?
+
+I'm still fairly new to java, and I think the most challenging thing for me to do will be to
+learn how everything fit together and know how to fit everything together as well. I did not fully
+understand the paint homework so I need to catch up a lot on this one.
+
+
+
+====================
+=: Core Concept 1 :=
+====================
+
+Concept 1: ___Using I/O to parse a novel file format.____
+
+- What specific feature of your game will be implemented using this concept?
+
+This concept will be used mainly to keep track of all the scores and update the high scores 
+accordingly. When storing the high scores, I will not simply write numbers down on the txt file,
+I will also add the player's name next to it.
+
+
+
+
+- Why does it make sense to implement this feature with this concept? Justify
+  why this is a non-trivial application of the concept in question.
+  
+In a game, it makes sense for the user to know the current top score, which can provide a 
+motivation for the player. High scores is implemented in almost all the common games though in
+many different forms.
+  
+  
+
+
+====================
+=: Core Concept 2 :=
+====================
+
+Concept 2: ___Appropriately modeling state using 2-D arrays or collections____
+
+- What specific feature of your game will be implemented using this concept?
+
+In order to randomly generate shapes, I am planning on using the random number generator. I will be 
+using a 3-D array for my game implementation. The first argument will be the number of horizontal 
+pixels, and the second argument will be the number of vertical pixels. The third argument would be
+a treeset of shapes to put within a that location. 
+
+- Why does it make sense to implement this feature with this concept? Justify
+  why this is a non-trivial application of the concept in question.
+  
+I am doing this because in my game, multiple shapes might overlap in the same location if 
+the random number generator generates the same indexes.
+Therefore, I need a 3-D array to do this.
+  
+I believe using a random number generator paired up with arrays is a fast method to generate the 
+random objects that I want. 
+====================
+=: Core Concept 3 :=
+====================
+
+Concept 3: ___Object-oriented design using inheritance and subtyping____
+
+- What specific feature of your game will be implemented using this concept?
+
+There are some obvious interfaces such as runnable and that I will use to extend upon them.
+Also, I plane on creating many other shapes extending the gameobject class.
+
+
+- Why does it make sense to implement this feature with this concept? Justify
+  why this is a non-trivial application of the concept in question.
+
+It makes sense because for example, squares, triangles are all certain types of gameobjects but 
+more specified. They must include methods included in the gameobject class and perhaps adding some
+more. Therefore, it makes sense to use inheritance and substyping here.
+
+
+====================
+=: Core Concept 4 :=
+====================
+
+Concept 4: ___Using JUnit to test some features of your model____
+
+- What specific feature of your game will be implemented using this concept?
+
+I will be implementing this concept when testing my gamecourt methods to make sure that they are
+correct and functional. Some sample methods that I will be testing include: if current score
+is registered in the text file, if high score retrieving method works, does the current score 
+increases if a correct object is clicked, and if the current score decreases if a dark object is 
+clicked.
+
+
+
+- Why does it make sense to implement this feature with this concept? Justify
+  why this is a non-trivial application of the concept in question.
+
+Everyone makes mistakes while coding so it makes sense to derive some sort of method to test your
+code and debug. In my game in particular, the score keeping is a function that I can thoroughly 
+test and make sure that it functions correctly.
+
